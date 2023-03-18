@@ -46,7 +46,15 @@ function updateScore() {
 function checkGameEnd() {
 	if (playerScore === 5) {
 		result.textContent = 'Congratulations! You won the game!';
+		disableOptions();
 	} else if (computerScore === 5) {
 		result.textContent = 'Sorry, you lost the game!';
+		disableOptions();
 	}
+}
+
+function disableOptions() {
+	options.forEach(option => {
+		option.disabled = true;
+	});
 }
